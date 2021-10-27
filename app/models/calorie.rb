@@ -5,4 +5,12 @@ class Calorie < ApplicationRecord
 
   has_one_attached :image
   belongs_to :user
+
+  def self.search(search)
+    if search != ""
+      Calorie.where('food LIKE(?)', "%#{search}%")
+    else
+      Calorie.all.order("created_at DESC")
+    end
+  end
 end

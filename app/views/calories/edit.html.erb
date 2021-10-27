@@ -1,9 +1,9 @@
 <%= render "shared/header" %>
-<h1>カロリーの編集</h1>
+<div class="new-calories">
+<h1>マカロンの編集</h1>
 
 <%= form_with(model: @calorie, local: true) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
-<div class="new-calories">
 
   <div class="new-food">
   <%= f.text_field :food, placeholder:"食べた物" %>
@@ -21,8 +21,10 @@
   <%= f.text_field :memo, placeholder:"メモ" %>
   </div>
 
+  <div class="new-time">
   <%= f.label :start_time %>
   <%= f.datetime_select :start_time %>
+  </div>
 
 <div class="new-button">
   <%= f.submit "保存",class: "ui pink button" %>
