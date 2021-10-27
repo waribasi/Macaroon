@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+<div class="macaron-show">
+  <div class="show-title">
+    マカロン詳細
+  </div>
+    <h3 class="show-food"><%= @calorie.food %></h3>
+    <h6 class="show-calorie"><%= @calorie.calorie %>kcal</h6>
+    <%= image_tag @calorie.image.variant(resize: '200x200'), class:"show-image" if @calorie.image.attached? %>
+    <h6 class="show-memo"><%= @calorie.memo %></h6>
+    <% if user_signed_in? && current_user.id == @calorie.user_id%>
+      <%= link_to "編集", edit_calory_path, method: :get, class: "ui pink button" %>
+      <%= link_to "削除", calory_path, method: :delete, class: "ui pink button" %>
+      <%= link_to "トップページに戻る", root_path, class: "ui pink button" %>
+    <% end %>
+</div>

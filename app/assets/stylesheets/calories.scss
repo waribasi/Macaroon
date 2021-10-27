@@ -1,0 +1,55 @@
+// Place all the styles related to the calories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wf-nicomoji {
+   font-family: "Nico Moji"; 
+   text-decoration: none;
+  }
+
+.font_nicomoji{
+  font-size:  35px;
+  margin:  10px;
+  color: pink;
+}
+
+.macaroon_log{
+  width: 5vw;
+  margin-right: 5vw;
+}
+
+.pink{
+  color: pink;
+}
+
+.calories{
+background-color: lightpink;
+width: 35vh;
+position: relative;
+margin: 10px;
+}
+
+.calorie-list{
+  list-style: none;
+}
+
+.food-list{
+  list-style: none;
+  font-size: 20px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.memo-list{
+  list-style: none;
+}
+
+.calorie-username{
+  list-style: none;
+}
+
+.calorie-lists{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

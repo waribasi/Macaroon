@@ -1,0 +1,36 @@
+.new-title{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.new-calories{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-food{
+  color: pink;
+  margin: 10px;
+}
+
+.new-calorie{
+  color: blue;
+  margin: 10px;
+}
+
+.new-image{
+  color: aqua;
+  margin: 10px;
+}
+
+.new-mamo{
+  color: yellow;
+  margin: 10px;
+}
+
+.new-time{
+  margin: 10px;
+}
+

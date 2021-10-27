@@ -1,0 +1,46 @@
+<%= render "shared/header" %>
+
+<% if user_signed_in?  %>
+  <%# カレンダーのカロリーを計算できるようにする %>
+  <h1>マイページ</h1>
+  <div class="ui grid">
+    <div class="eight wide column">
+      <h2 class="calorie-title">マカロンカレンダー</h2>
+      <%= month_calendar events: @calories do |date, calorie| %>
+        <%= date.day %>
+          <% calorie.each do |calorie| %>
+            <% if current_user.id == calorie.user.id %>
+              <div>
+                <%=  calorie.calorie %>kcal
+              </div>
+            <% end %>
+          <% end %>
+      <% end %>
+      <%# カロリー保存するパスを記載 %>
+      <%= link_to '保存する',new_calory_path, class: "ui pink button" %>
+    </div>
+
+    <%# 各データを横並びにするようにする %>
+    <div class="eight wide column">
+      <h2 class="calorie-title">マカロン履歴</h2>
+      <div class="calorie-lists">
+        <% @calories.each do |calorie| %>
+          <% if current_user.id == calorie.user_id &&  %>
+          <ul class="calories">
+              <%= link_to calory_path(calorie.id) do %>
+               <li class="food-list"><%= calorie.food %></li>
+              <% end %>
+              <%= image_tag calorie.image.variant(resize: '200x200') if calorie.image.attached? %>
+              <li class="calorie-list"><%= calorie.calorie %>kcal</li>
+           <% end %>
+        </ul>
+        <% end %>
+     </div>
+  </div>
+<% else %>
+  マカロンはカロリー管理と美味しかった食べ物を記録し、共有するアプリです。
+  新規登録をすればあなたのマイページからマカロンを投稿できます！
+  <%= render "shared/index" %>
+<% end %>
+
+<%# 共通のフッターを作成する %>

@@ -1,0 +1,18 @@
+.log-in{
+  color: pink;
+}
+
+
+.tops{
+  /* width: 50vw; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}

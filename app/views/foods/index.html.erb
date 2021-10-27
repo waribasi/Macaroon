@@ -1,0 +1,15 @@
+<%= render "shared/header" %>
+
+<h1 class="calorie-title">みんなのマカロン</h1>
+<div class="calorie-lists">
+    <% @calories.each do |calorie| %>
+      <ul class="calories">
+          <%= link_to food_path(calorie.id) do %>
+            <li class="food-list"><%= calorie.food %></li>
+          <% end %>
+          <%= image_tag calorie.image.variant(resize: '200x200') if calorie.image.attached? %>
+          <li class="calorie-username"><%= calorie.user.nickname %></li>
+          <li class="calorie-list"><%= calorie.calorie %>kcal</li>
+      </ul>
+    <% end %>
+    </div>
