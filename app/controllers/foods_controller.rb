@@ -8,7 +8,10 @@ class FoodsController < ApplicationController
   end
 
   def show
+    @messages = @calorie.messages.includes(:user)
+    @message = Message.new
   end
+  
 
   def edit
   end

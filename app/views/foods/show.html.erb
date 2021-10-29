@@ -13,4 +13,16 @@
       <%= link_to "削除", food_path, method: :delete, class: "ui pink button" %>
       <%= link_to "マカロン一覧に戻る", foods_path, class: "ui pink button" %>
     <% end %>
+
+    <%= form_with(model: [@calorie, @message], local: true) do |f| %>
+      <%= f.text_field :message %>
+      <%= f.submit '送信', class: "ui pink button" %>
+    <% end %>
+    <div id='messages'>
+      <% @messages.reverse_each do |message| %>
+        <p><%= message.message %></p>
+       <% end %>
+    </div>
 </div>
+
+<%# food_comments_pat %>

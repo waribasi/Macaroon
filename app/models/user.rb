@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   belongs_to :gender
   has_many :calories
+  has_many :messages
 
   validates :gender_id, numericality: { other_than: 1 } 
   validates :body_weight, format: { with: /\A[0-9]+\z/}
