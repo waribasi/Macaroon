@@ -10,11 +10,11 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-  debugger
+  
   const html = `<p>${data.content.message}</p>`;
   const messages = document.getElementById('messages');
   const newMessage = document.getElementById('message_message');
   messages.insertAdjacentHTML('afterbegin', html);
-  newMessage.value='';
+  newMessage.value=' ';
   }
 });

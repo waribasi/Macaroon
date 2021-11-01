@@ -12,7 +12,6 @@ class FoodsController < ApplicationController
     @message = Message.new
   end
   
-
   def edit
   end
 

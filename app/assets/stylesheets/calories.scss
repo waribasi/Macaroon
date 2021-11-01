@@ -23,10 +23,11 @@
 }
 
 .calories{
-background-color: lightpink;
+color: white;
 width: 35vh;
 position: relative;
-margin: 10px;
+margin: 5px;
+border: 1px solid lightpink;
 }
 
 .calorie-list{
@@ -52,4 +53,14 @@ margin: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.aiueo{
+  color:  rgb(255, 104, 235);
+  text-decoration:none;
+}
+
+.aiueo:hover{
+  color:pink;
+  text-decoration:none;
 }

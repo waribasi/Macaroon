@@ -7,6 +7,7 @@
    <%= current_user.nickname %> 
   </a>
   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "item" %>
+  <%= link_to 'マイページ', root_path,  class: "item" %>
   <%= link_to 'みんなのマカロン', foods_path,  class: "item" %>
   <% else %>
   <a class="active item" href="/users/sign_up/">

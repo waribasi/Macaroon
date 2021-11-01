@@ -1,22 +1,28 @@
-.show-food{
-  color: pink;
-}
-
-.show-calorie{
-  color: blue;
-}
-
-.show-memo{
-  color: aquamarine;
-}
-
 .macaron-show{
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 10px;
+  border: 1px solid lightpink;
+  width: 50vw;
 }
 
 .show-title{
   font-size: 34px;
+  margin: 30px;
+  color: pink;
 }
+
+.show-box{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.shows-flex{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+

@@ -1,35 +1,36 @@
 <%= render "shared/header" %>
-<div class="new-calories">
-<h1>カロリーの保存</h1>
+<div class="calorie-all">
+  <div class="new-calories">
+    <h1>カロリーの保存</h1>
 
-<%= form_with(model: @calorie, local: true) do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
+    <%= form_with(model: @calorie, local: true) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="new-food">
-  <%= f.text_field :food, placeholder:"食べた物" %>
+    <div class="new-food">
+    <%= f.text_field :food, placeholder:"食べた物" %>
+    </div>
+
+    <div class="new-calorie">
+    <%= f.text_field :calorie, placeholder:"摂取したカロリー" %>kcal
+    </div>
+
+    <div class="new-image">
+    <%= f.file_field :image, placeholder:"写真" %>
+    </div>
+
+    <div class="new-mamo">
+    <%= f.text_field :memo, placeholder:"メモ" %>
+    </div>
+
+    <div class="new-time">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+    </div>
+
+    <div class="new-button">
+    <%= f.submit "保存",class: "ui pink button" %>
+    </div>
   </div>
-
-  <div class="new-calorie">
-  <%= f.text_field :calorie, placeholder:"摂取したカロリー" %>kcal
-  </div>
-
-  <div class="new-image">
-  <%= f.file_field :image, placeholder:"写真" %>
-  </div>
-
-  <div class="new-mamo">
-  <%= f.text_field :memo, placeholder:"メモ" %>
-  </div>
-
-  <div class="new-time">
-  <%= f.label :start_time %>
-  <%= f.datetime_select :start_time %>
-  </div>
-
-<div class="new-button">
-  <%= f.submit "保存",class: "ui pink button" %>
-  </div>
-
-
 </div>
+
 <% end %>

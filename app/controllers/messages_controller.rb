@@ -5,7 +5,9 @@ class MessagesController < ApplicationController
     if @message.save
       ActionCable.server.broadcast 'message_channel', content: @message
     else
-      redirect_to root_path
+      # 送信に失敗した時の正しい処理をするようにする
+      @calorie = @message.calorie
+      @messages = @calorie.messages
     end
   end
 

@@ -1,20 +1,22 @@
 <%= render "shared/header" %>
 
+<div class="food-titles">
+  <h1 class="calorie-title">みんなのマカロン</h1>
   <%= form_with(url: search_foods_path, local: true, method: :get, class: "search-form") do |f| %>
     <%= f.text_field :keyword, placeholder: "マカロンを検索", class: "search-input" %>
     <%= f.submit "検索", class: "ui pink button" %>
   <% end %>
+</div>
 
-<h1 class="calorie-title">みんなのマカロン</h1>
 <div class="calorie-lists">
     <% @calories.each do |calorie| %>
       <ul class="calories">
-          <%= link_to food_path(calorie.id) do %>
+          <%= link_to food_path(calorie.id),class: "aiueo" do %>
             <li class="food-list"><%= calorie.food %></li>
+            <li class="calorie-username"><%= calorie.user.nickname %></li>
+            <li class="calorie-list"><%= calorie.calorie %>kcal</li>
+            <%= image_tag calorie.image.variant(resize: '200x200') if calorie.image.attached? %>
           <% end %>
-          <%= image_tag calorie.image.variant(resize: '200x200') if calorie.image.attached? %>
-          <li class="calorie-username"><%= calorie.user.nickname %></li>
-          <li class="calorie-list"><%= calorie.calorie %>kcal</li>
       </ul>
     <% end %>
-    </div>
+</div>
