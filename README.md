@@ -1,24 +1,27 @@
-# README
+# アプリケーション名
+マカロン
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+1日に摂取したカロリーを食べ物とそのカロリーを登録し、カレンダーで管理する。そして美味しかった食べ物を共有するアプリです。
 
-Things you may want to cover:
+# URL
+https://macaroon-673.herokuapp.com/
 
-* Ruby version
+# テストアカウント
 
-* System dependencies
+# 利用方法
+・各種機能はログインをしてから利用する。ログイン後はマイページに遷移し、保存ボタンからカロリーを保存できる。・詳細から編集、削除が可能。
+・カレンダーには保存した日付にカロリーが反映される。
+みんなのマカロンではみんなが登録したデータが一覧で表示され、各データの詳細からコメントができる。
 
-* Configuration
+# 目指した課題解決
 
-* Database creation
+# 洗い出した要件
 
-* Database initialization
+# 実装した機能についての画像やGIFおよびその説明
 
-* How to run the test suite
+# 実装予定の機能
 
-* Services (job queues, cache servers, search engines, etc.)
+# データベース設計
 
-* Deployment instructions
-
-* ...
+# ローカルでの動作方法
