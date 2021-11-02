@@ -35,15 +35,17 @@
 
     <% if user_signed_in? %>
       <%= form_with(model: [@calorie, @message], local: true) do |f| %>
-        <%= f.text_field :message %>
-        <%= f.submit '送信', class: "ui pink button" %>
-      <% end %>
+        <div>
+          <%= f.text_field :message, class: "search-input" %>
+          <%= f.submit '送信', class: "ui pink button" %>
+        </div>
+    <% end %>
 
-      <div id='messages'>
-        <% @messages.reverse_each do |message| %>
-          <p><%= message.message %></p>
-        <% end %>
-      </div>
+    <div id='messages'>
+      <% @messages.reverse_each do |message| %>
+        <p><%= message.message %></p>
+      <% end %>
+    </div>
     <% end %>
   </div>
 </div>

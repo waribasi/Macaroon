@@ -24,4 +24,39 @@ https://macaroon-673.herokuapp.com/
 
 # データベース設計
 
+## usersテーブル
+| Column | Type       | Options                         |
+| ------ | ---------- | ------------------------------  |
+| nickname  | string | null: false                      |
+| email | string | null: false, unique: true            |
+| encrypted_password | string | null: false             |
+| gender_id| integer | null: false                      |
+| body_weight | integer | null: false                   |
+| stature | integer | null: false                       |
+
+### Association
+-has_many : calories
+-has_many : messages
+
+## caloriesテーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | -------------------------------|
+| calorie   | integer     | null: false                |
+| food    |  string      | null: false                 |
+| memo   | string  |                                   |
+| start_time | datetime  | null: false                 |
+
+### Association
+-belongs_to : user
+-has_many : messages
+
+## messagesテーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | -------------------------------|
+| message | string | null: false                       |
+
+### Association
+-belongs_to : user
+-belongs_to : calorie
+
 # ローカルでの動作方法
