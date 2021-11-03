@@ -2,13 +2,17 @@
 
 <% if user_signed_in?  %>
   <%# カレンダーのカロリーを計算できるようにする %>
-  <h1>マイページ</h1>
+  <h1 class="my-page">マイページ</h1>
   <div class="ui grid">
     <div class="eight wide column">
-      <h2 class="calorie-title">マカロンカレンダー</h2>
-      <%= link_to '保存する',new_calory_path, class: "ui pink button" %>
+      <div class="calorie-titles">
+        <h2 class="calorie-title">マカロンカレンダー</h2>
+        <%= link_to '保存',new_calory_path, class: "ui pink button" %>
+      </div>
       <%= month_calendar events: @calories do |date, calorie| %>
-        <%= date.day %>
+        <div>
+          <%= date.day %>
+        </div>
           <% calorie.each do |calorie| %>
             <% if current_user.id == calorie.user.id %>
               <div>
@@ -24,21 +28,23 @@
       <div class="calorie-lists">
         <% @calories.each do |calorie|%>
           <% if current_user.id == calorie.user_id &&  %>
-          <ul class="calories">
-              <%= link_to calory_path(calorie.id), class: "aiueo" do  %>
-               <li class="food-list"><%= calorie.food %></li>
-              <% end %>
-              <%= image_tag calorie.image.variant(resize: '200x200') if calorie.image.attached? %>
-              <li class="calorie-list"><%= calorie.calorie %>kcal</li>
+            <ul class="calories">
+                <%= link_to calory_path(calorie.id), class: "aiueo" do  %>
+                  <li class="food-list"><%= calorie.food %></li>
+                  <li class="calorie-list"><%= calorie.calorie %>kcal</li>
+                <%= image_tag calorie.image.variant(resize: '200x200') if calorie.image.attached? %>
+                <% end %>
            <% end %>
-        </ul>
+          </ul>
         <% end %>
      </div>
   </div>
+
 <% else %>
   マカロンはカロリー管理と美味しかった食べ物を記録し、共有するアプリです。
   新規登録をすればあなたのマイページからマカロンを投稿できます！
   <%= render "shared/index" %>
 <% end %>
+
 
 <%# 共通のフッターを作成する %>

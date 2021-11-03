@@ -34,12 +34,13 @@
     </div>
 
     <% if user_signed_in? %>
-      <%= form_with(model: [@calorie, @message], local: true) do |f| %>
+      <%= form_with(model: [@calorie, @message],url: calory_messages_path(@calorie.id), method: :post, local: true) do |f| %>
         <div>
           <%= f.text_field :message, class: "search-input" %>
           <%= f.submit '送信', class: "ui pink button" %>
         </div>
     <% end %>
+    <%# form_with model: [goal, comment], url: goal_comments_path(goal.id), method: :post, local: false do |form| %>
 
     <div id='messages'>
       <% @messages.reverse_each do |message| %>

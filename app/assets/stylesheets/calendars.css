@@ -5,10 +5,29 @@
 
 .simple-calendar{
   padding: 11px;
+  margin-left: 40px;
+  border: lightpink 1px solid;
+}
+
+.calorie-titles{
+  display: flex;
+  justify-content: space-between;
 }
 
 .calorie-title{
   color: lightpink;
+  margin-left: 40px;
 }
 
+.n-month{
+  color: pink;
+  text-decoration:none;
+}
 
+.day-color{
+  color: pink;
+}
+
+.calendar-calorie{
+  color: pink;
+}
