@@ -17,7 +17,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  
 }
 
 .shows-flex{
@@ -26,3 +25,24 @@
   margin: 10px;
 }
 
+.messages{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid pink;
+  margin: 10px;
+  width: 30%;
+}
+
+.message-list{
+  font-size: 15px;
+}
+
+.message-com{
+  font-size: 10px;
+  color: lightpink;
+}
+
+.show-button{
+  display: flex;
+  justify-content: right;
+}

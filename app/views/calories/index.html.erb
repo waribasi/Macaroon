@@ -10,19 +10,14 @@
         <div><%= link_to '保存',new_calory_path, class: "ui pink button" %></div>
       </div>
       <%= month_calendar events: @calories do |date, calorie| %>
-        <div>
-          <%= date.day %>
-        </div>
+        <%= date.day %>
           <% calorie.each do |calorie| %>
             <% if current_user.id == calorie.user.id %>
-              <div>
-                <%=  calorie.calorie %>kcal
-              </div>
+              <div><%=  calorie.calorie %>kcal</div>
             <% end %>
           <% end %>
       <% end %>
     </div>
-
     <div class="eight wide column">
       <h2 class="calorie-title">マカロン履歴</h2>
       <div class="calorie-lists">
@@ -39,12 +34,7 @@
         <% end %>
      </div>
   </div>
-
 <% else %>
-  マカロンはカロリー管理と美味しかった食べ物を記録し、共有するアプリです。
-  新規登録をすればあなたのマイページからマカロンを投稿できます！
+  <div>マカロンはカロリー管理と美味しかった食べ物を記録し、共有するアプリです。新規登録をすればあなたのマイページからマカロンを投稿できます！</div>
   <%= render "shared/index" %>
 <% end %>
-
-
-<%# 共通のフッターを作成する %>

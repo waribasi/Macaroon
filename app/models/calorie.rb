@@ -5,7 +5,7 @@ class Calorie < ApplicationRecord
 
   has_one_attached :image
   belongs_to :user
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   def self.search(search)
     if search != ""

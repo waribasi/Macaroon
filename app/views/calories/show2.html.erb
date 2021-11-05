@@ -3,20 +3,11 @@
 <div class="ui grid">
   <div class="eight wide column">
     <%= render "shared/show" %>
-    <%= link_to "トップページに戻る", show2_calory_path, class: "ui pink button" %>
+    <div class="show-button">
+      <div><%= link_to "トップページに戻る", root_path, class: "ui pink button" %></div>
+    </div>
   </div>
   <div class="eight wide column">
-    <div class="show-title">コメント一覧</div>
-    <% if user_signed_in? %>
-      <%= form_with(model: [@calorie, @message],url: calory_messages_path(@calorie.id), method: :post, local: false) do |f| %>
-          <%= f.text_field :message, class: "search-input" %>
-          <%= f.submit '送信', class: "ui pink button" %>
-      <% end %>
-    <div id='messages'>
-      <% @messages.reverse_each do |message| %>
-        <p><%= message.message %></p>
-      <% end %>
-    </div>
-    <% end %>
+    <%= render "shared/message" %>
   </div>
 </div>

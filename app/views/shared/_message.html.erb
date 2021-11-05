@@ -1,0 +1,18 @@
+<div class="show-title">コメント一覧</div>
+<% if user_signed_in? %>
+  <%= form_with(model: [@calorie, @message],url: calory_messages_path(@calorie.id), method: :post, local: false) do |f| %>
+    <%= f.text_field :message, class: "search-input" %>
+    <%= f.submit '送信', class: "ui pink button" %>
+  <% end %>
+<% end %>
+<div id='messages'>
+  <% @messages.reverse_each do |message| %>
+    <div class="messages">
+      <div class="message-list"><%= message.user.nickname %></div>
+      <% if user_signed_in? && current_user.id == message.user_id%>
+        <div class="message-com">コメント <%= link_to "削除", calory_message_path(@calorie.id, message.id), method: :delete, class:"message-com"%></div>
+      <% end %>
+      <div class="message-list"><%= message.message %></div>
+    </div>
+  <% end %>
+</div>
