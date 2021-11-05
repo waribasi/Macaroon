@@ -7,7 +7,7 @@
     <div class="eight wide column">
       <div class="calorie-titles">
         <h2 class="calorie-title">マカロンカレンダー</h2>
-        <%= link_to '保存',new_calory_path, class: "ui pink button" %>
+        <div><%= link_to '保存',new_calory_path, class: "ui pink button" %></div>
       </div>
       <%= month_calendar events: @calories do |date, calorie| %>
         <div>

@@ -1,10 +1,14 @@
 class CaloriesController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_calorie, only: [:show, :destroy, :edit, :update]
-  before_action :move_to_index, except: [:index, :new, :create, :update, :destroy, :show]
+  before_action :authenticate_user!, only: [:new, :edit, :edit2]
+  before_action :set_calorie, only: [:show, :show2, :destroy, :edit, :edit2, :update]
+  before_action :move_to_index, except: [:index, :index2, :new, :create, :update, :destroy, :show, :show2, :search]
 
   def index
+    @calories = Calorie.all.order("created_at DESC")
+  end
+
+  def index2
     @calories = Calorie.all.order("created_at DESC")
   end
 
@@ -22,6 +26,13 @@ class CaloriesController < ApplicationController
   end
 
   def show
+    @messages = @calorie.messages.includes(:user)
+    @message = Message.new
+  end
+
+  def show2
+    @messages = @calorie.messages.includes(:user)
+    @message = Message.new
   end
 
   def destroy
@@ -32,9 +43,16 @@ class CaloriesController < ApplicationController
   def edit
   end
 
+  def edit2
+  end
+
   def update
     @calorie.update(calorie_params)
     redirect_to calory_path(@calorie.id)
+  end
+
+  def search
+    @calories = Calorie.search(params[:keyword])
   end
 
   private
