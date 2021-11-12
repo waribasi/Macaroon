@@ -8,21 +8,39 @@
 https://macaroon-673.herokuapp.com/
 
 # テストアカウント
-
+・
 # 利用方法
 ・各種機能はログインをしてから利用する。ログイン後はマイページに遷移し、保存ボタンからカロリーを保存できる。・詳細から編集、削除が可能。
 ・カレンダーには保存した日付にカロリーが反映される。
 みんなのマカロンではみんなが登録したデータが一覧で表示され、各データの詳細からコメントができる。
 
-# 目指した課題解決
-
-# 洗い出した要件
+# 制作背景(意図)
+自分自身食事量が少なく、ちゃんと食べられているかどうか感覚でしか分からず、数値化にして食事に気を使いたいと思ったから。
 
 # 実装した機能についての画像やGIFおよびその説明
 
-# 実装予定の機能
+### 新規登録方法
+ ページ上部の「新規登録」から
+ ニックネーム、Eメール、パスワード、性別、体重、身長を入力してください。
+[![Image from Gyazo](https://i.gyazo.com/5162ee7dc2ea7b7be951ff5f10bed8ea.gif)](https://gyazo.com/5162ee7dc2ea7b7be951ff5f10bed8ea)
+
+### マカロン（カロリー）の保存方法
+マイページの「保存」から
+食べ物、摂取したカロリー、
+[![Image from Gyazo](https://i.gyazo.com/56395cfeee3451df3fadc4ae4544fba1.gif)](https://gyazo.com/56395cfeee3451df3fadc4ae4544fba1)
+
+
+### コメントの方法
+詳細ページよりコメントができます。
+
+[![Image from Gyazo](https://i.gyazo.com/1a58f2e6a623189b7dfa18d0b096ba45.gif)](https://gyazo.com/1a58f2e6a623189b7dfa18d0b096ba45)
+
+# 課題や今後実装したい機能
+・日にち別にカロリーを合計してカレンダーからその日のカロリーをクリックするとその日のカロリー一覧が出るようにしたい。
 
 # データベース設計
+[![Image from Gyazo](https://i.gyazo.com/f4f2632f444b3b66f129b9fe1cca0e0b.png)](https://gyazo.com/f4f2632f444b3b66f129b9fe1cca0e0b)
+
 
 ## usersテーブル
 | Column | Type       | Options                         |
@@ -58,5 +76,3 @@ https://macaroon-673.herokuapp.com/
 ### Association
 -belongs_to : user
 -belongs_to : calorie
-
-# ローカルでの動作方法

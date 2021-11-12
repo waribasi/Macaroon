@@ -10,7 +10,9 @@ class User < ApplicationRecord
   has_many :calories
   has_many :messages
 
-  validates :gender_id, numericality: { other_than: 1 } 
-  validates :body_weight, format: { with: /\A[0-9]+\z/}
-  validates :stature, format: { with: /\A[0-9]+\z/}
+  validates :nickname, presence: true
+  validates :gender_id, presence: true, numericality: { other_than: 1 } 
+  validates :body_weight, presence: true, format: { with: /\A[0-9]+\z/}, numericality:{only_integer: true}
+  validates :stature, presence: true, format: { with: /\A[0-9]+\z/}, numericality:{only_integer: true}
 end
+
